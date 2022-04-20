@@ -20,6 +20,7 @@ int main(void){
     }
     else{
         printf("INVALID\n");
+        return 1;
     }
 
     int digits[diginum];
@@ -29,24 +30,24 @@ int main(void){
     if(valid){
         if(diginum == 15 && digits[diginum-1] == 3 && (digits[diginum-2] == 4 || digits[diginum-2]==7)){
             printf("AMEX\n");
-            return 1;
+            return 0;
         }
         else if((diginum == 13 || diginum == 16) && digits[diginum-1]==4){
             printf("VISA\n");
-            return 1;
+            return 0;
         }
         else if((digits[diginum-2]>=1 && digits[diginum-2]<=5) && digits[diginum-1] == 5 && diginum == 16){
             printf("MASTERCARD\n");
-            return  1;
+            return  0;
         }
         else{
             printf("INVALID\n");
-            return 0;
+            return 1;
         }
     }
     else{
         printf("INVALID\n");
-        return 0;
+        return 1;
     }
 }
 
